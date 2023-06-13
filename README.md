@@ -4,11 +4,18 @@
 ## How to use
 1. Clone the repo
     `git clone https://github.com/CSIS-3380-001/final-project`
-2. Install server dependencies
+
+### Backend
+1. Install server dependencies
     `cd ./server && npm i`
-3. Create `.env` file inside `./server` directory ( `./server/.env`)
-4. Add following lines in the file
+2. Create `.env` file inside `./server` directory ( `./server/.env`)
+3. Add following lines in the file
     ```
     PORT=8080
     ```
-5. Start server using `npm start`
+4. Start server using `npm start`
+
+### Frontend
+1. Install client dependencies
+    `cd ./client && npm i`
+2. Start server usign `npm start`
