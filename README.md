@@ -9,6 +9,6 @@
 3. Create `.env` file inside `./server` directory ( `./server/.env`)
 4. Add following lines in the file
     ```
-    PORT=3000
+    PORT=8080
     ```
 5. Start server using `npm start`
