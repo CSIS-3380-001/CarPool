@@ -4,6 +4,7 @@ let createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const logger = require('morgan');
+const connectDB = require('./config/db');
 
 let app = express();
 let router = require('./router');
@@ -29,11 +30,17 @@ let server = http.createServer(app);
 /**
  * Listen on provided port, on all network interfaces.
  */
-server.listen(port);
-server.on('error', onError);
-server.on('listening', function () {
-    console.log(`Listening on localhost:${port}`);
-});
+const start = async () => {
+  await connectDB();
+  server.listen(port);
+  server.on('error', onError);
+  server.on('listening', function () {
+      console.log(`Listening on localhost:${port}`);
+  });
+}
+
+// Spin up the server
+start();
 
 /**
  * Event listener for HTTP server "error" event.

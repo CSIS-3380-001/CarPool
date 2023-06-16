@@ -11,7 +11,9 @@
 2. Create `.env` file inside `./server` directory ( `./server/.env`)
 3. Add following lines in the file
     ```
-    PORT=8080
+    PORT=8081
+
+    DB_URI="mongodb+srv://root:VRPd3ICLK6juCQCa@cluster0.dg4ocjz.mongodb.net/?retryWrites=true&w=majority"
     ```
 4. Start server using `npm start`
 
