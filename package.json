@@ -1,0 +1,15 @@
+{
+  "name": "final-project",
+  "version": "1.0.0",
+  "description": "## How to use 1. Clone the repo     `git clone https://github.com/CSIS-3380-001/final-project`",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "server": "cd server && npm start",
+    "client": "cd client && npm start"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
