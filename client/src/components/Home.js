@@ -1,6 +1,8 @@
 import React, { useContext, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { AuthContext } from '../components/Auth/AuthContext';
+import { AuthContext } from '../contexts/AuthContext';
+
+import { Sidebar } from './Sidebar/Sidebar';
 
 export const Home = () => {
     const { isLoggedIn, logout } = useContext(AuthContext);
@@ -23,6 +25,8 @@ export const Home = () => {
         <button type="logout" className="btn btn-primary" onClick={logout}>
             Logout
         </button>
+
+        <Sidebar></Sidebar>
     </div>
     );
 }

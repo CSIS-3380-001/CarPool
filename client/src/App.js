@@ -2,7 +2,7 @@ import {Routes, Route} from 'react-router-dom';
 import { Home } from './components/Home';
 import { About } from './components/About';
 import { RentalCabForm } from './components/RentalCabForm/RentalCabForm';
-import { AuthProvider } from './components/Auth/AuthContext';
+import { AuthProvider } from './contexts/AuthContext';
 import { Login } from './components/Login/Login';
 import 'bootstrap/dist/css/bootstrap.css';
 
