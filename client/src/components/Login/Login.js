@@ -29,6 +29,11 @@ export const Login = () => {
     navigate("/");    
   };
 
+  const goTo = (path) => {
+    console.log("redirecting");
+    navigate(path);
+  }
+
   return (
     <div className='container'>
       <div className="login-form">
@@ -47,19 +52,35 @@ export const Login = () => {
           </div>
           <div className="form-group">
             <label htmlFor="password">Password</label>
-            <input
-              type="password"
-              className="form-control"
-              id="password"
-              placeholder="Enter password"
-              value={password}
-              onChange={handlePasswordChange}
-            />
+            <div className="input-group">
+              <input
+                type="password"
+                className="form-control"
+                id="password"
+                placeholder="Enter password"
+                value={password}
+                onChange={handlePasswordChange}
+              />
+            </div>
           </div>
-          <button type="submit" className="btn btn-primary">
-            Login
-          </button>
+
+          <div className="form-group">
+            <div className="row">
+              <div className="col">
+                <button type="submit" className="btn btn-primary btn-block">
+                  Login
+                </button>
+              </div>
+            </div>
+          </div>
         </form>
+
+        <div className="col">
+            <button className="btn btn-primary btn-block" onClick={() => {goTo("/sign-up")}}>
+              Signup
+            </button>
+        </div>
+
       </div>
     </div>
   );
