@@ -1,0 +1,10 @@
+.login-form {
+    max-width: 500px;
+    margin: auto;
+    padding-top: 100px;
+}
+
+.form-group {
+    margin-top: 15px;
+    margin-bottom: 15px;
+}
