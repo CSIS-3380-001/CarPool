@@ -2,7 +2,7 @@ import {Routes, Route} from 'react-router-dom';
 import { Home } from './components/Home';
 import { About } from './components/About';
 // import { RentalCabForm } from './components/RentalCabForm/RentalCabForm';
-import {RentOutPage} from './components/RentOutPage';
+import {RentOutPage} from './components/PostPage';
 import { AuthProvider } from './contexts/AuthContext';
 import { Login } from './components/Login/Login';
 import { Signup } from './components/Signup/Signup';

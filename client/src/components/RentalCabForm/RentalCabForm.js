@@ -63,10 +63,9 @@ export const RentalCabForm = () => {
     });
   };
 
-  const handleImageUpload = (e) => {
-    const files = Array.from(e.target.files);
-    const selectedImages = files.slice(0, 3); // Limit to 3 images
-    setImages(selectedImages);
+  const handleImageUpload = (event) => {
+    const selectedFiles = Array.from(event.target.files);
+    setImages(selectedFiles);
   };
 
   const handleSubmit = (e) => {
@@ -204,26 +203,25 @@ export const RentalCabForm = () => {
         </label>
       </div>
 
-    <div className="column">
-    <h2>Vehicle Images</h2>
-    <div className="image-upload">
-      <label>Vehicle Images (up to 3)</label>
-      <input
-        type="file"
-        accept="image/*"
-        multiple
-        onChange={handleImageUpload}
-      />
-      <div className="image-preview">
-        {images.map((image, index) => (
-          <div className="image-preview-item" key={index}>
-            <img src={URL.createObjectURL(image)} alt={`Preview ${index}`} />
+      <div className="column">
+        <h2>Vehicle Images</h2>
+        <div className="image-upload">
+          <label>Vehicle Images (up to 3)</label>
+          <input
+            type="file"
+            accept="image/*"
+            multiple
+            onChange={handleImageUpload}
+          />
+          <div className="image-preview">
+            {images.map((image, index) => (
+              <div className="image-preview-item" key={index}>
+                <img src={URL.createObjectURL(image)} alt={`Preview ${index}`} />
+              </div>
+            ))}
           </div>
-        ))}
+        </div>
       </div>
-    </div>
-  </div>
-
       <div className="column">
         <button type="submit">Submit</button>
       </div>
