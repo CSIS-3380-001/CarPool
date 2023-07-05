@@ -228,3 +228,10 @@ export const RentalCabForm = () => {
     </form>
   );
 };
+
+// Database columns
+// vehicle: name, make, model
+// availability: time, days
+// locations: pickup, dropOff
+// costs: fare, deposit, otherCosts
+// images: images
