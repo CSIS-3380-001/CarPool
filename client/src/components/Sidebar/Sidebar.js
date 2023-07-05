@@ -7,6 +7,15 @@ import './Sidebar.css';
 export const Sidebar = () => {
   const { isLoggedIn, logout } = useContext(AuthContext);
   const navigate = useNavigate();
+
+  useEffect(() => {
+      if (!isLoggedIn) {
+        console.log("Not logged in");
+        // Redirect the user to the login page
+        navigate('/login');
+      }
+    }, [isLoggedIn, navigate]);
+  
   return (
 <div class="col-2 bg-dark sidebar" style={{ height: '100vh' }}>
   <h1>Navigate</h1>

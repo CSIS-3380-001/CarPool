@@ -4,6 +4,7 @@ import './Signup.css';
 
 export const Signup = () => {
   const navigate = useNavigate();
+  
 
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
