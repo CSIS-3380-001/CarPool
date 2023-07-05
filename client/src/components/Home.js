@@ -16,6 +16,7 @@ export const Home = () => {
         }
       }, [isLoggedIn, navigate]);
     
+      
     
     return (
 
@@ -27,10 +28,6 @@ export const Home = () => {
           {/* Main content */}
           <h1>Welcome, User!</h1>
             {/* Rest of the Home component */}
-
-            <button type="logout" className="btn btn-primary" onClick={logout}>
-                Logout
-            </button>
         </div>
       </div>
     </div>
