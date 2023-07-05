@@ -18,15 +18,21 @@ export const Home = () => {
     
     
     return (
-    <div>
-        <h1>Welcome, User!</h1>
-        {/* Rest of the Home component */}
 
-        <button type="logout" className="btn btn-primary" onClick={logout}>
-            Logout
-        </button>
-
+    <div className="container-fluid">
+      <div className="row">
         <Sidebar></Sidebar>
+
+        <div className="col-10">
+          {/* Main content */}
+          <h1>Welcome, User!</h1>
+            {/* Rest of the Home component */}
+
+            <button type="logout" className="btn btn-primary" onClick={logout}>
+                Logout
+            </button>
+        </div>
+      </div>
     </div>
     );
 }
