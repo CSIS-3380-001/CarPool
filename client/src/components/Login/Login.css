@@ -8,3 +8,16 @@
     margin-top: 15px;
     margin-bottom: 15px;
 }
+
+.row {
+    overflow: hidden;
+}
+
+.sideImg {
+    height: '100vh';
+    overflow: hidden;
+}
+
+.sideImg img {
+    height: 100vh;
+}

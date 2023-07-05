@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import './Signup.css';
 
 export const Signup = () => {
   const navigate = useNavigate();
@@ -40,47 +41,55 @@ export const Signup = () => {
   return (
 
     <div className='container'>
-      <div className="login-form">
-      <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
-        <div className="form-group">
-          <label htmlFor="username">Username</label>
-          <input
-            type="text"
-            className="form-control"
-            id="username"
-            placeholder="Enter username"
-            value={username}
-            onChange={handleUsernameChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="email">Email</label>
-          <input
-            type="email"
-            className="form-control"
-            id="email"
-            placeholder="Enter email"
-            value={email}
-            onChange={handleEmailChange}
-          />
-        </div>
-        <div className="form-group">
-          <label htmlFor="password">Password</label>
-          <input
-            type="password"
-            className="form-control"
-            id="password"
-            placeholder="Enter password"
-            value={password}
-            onChange={handlePasswordChange}
-          />
-        </div>
-        <button type="submit" className="btn btn-primary">
-          Signup
-        </button>
-      </form>
+      <div className='row'>
+        <div className='col-md-6'>
+        <div className="login-form">
+        <h2>Signup</h2>
+        <form onSubmit={handleSubmit}>
+          <div className="form-group">
+            <label htmlFor="username">Username</label>
+            <input
+              type="text"
+              className="form-control"
+              id="username"
+              placeholder="Enter username"
+              value={username}
+              onChange={handleUsernameChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="email">Email</label>
+            <input
+              type="email"
+              className="form-control"
+              id="email"
+              placeholder="Enter email"
+              value={email}
+              onChange={handleEmailChange}
+            />
+          </div>
+          <div className="form-group">
+            <label htmlFor="password">Password</label>
+            <input
+              type="password"
+              className="form-control"
+              id="password"
+              placeholder="Enter password"
+              value={password}
+              onChange={handlePasswordChange}
+            />
+          </div>
+          <button type="submit" className="btn btn-primary">
+            Signup
+          </button>
+        </form>
+      
+      </div>
+      </div>
+      <div className='col-md-6 sideImg'>
+        <img src="https://i.imgur.com/Dc9mJwI.jpg" aria-hidden alt="Image"/>
+      </div>
     </div>
-    </div>
+  </div>
   );
 };
