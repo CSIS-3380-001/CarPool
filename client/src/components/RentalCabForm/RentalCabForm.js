@@ -3,7 +3,7 @@ import DatePicker from 'react-datepicker';
 import 'react-datepicker/dist/react-datepicker.css';
 import './RentalCabForm.css';
 
-const RentalCabForm = () => {
+export const RentalCabForm = () => {
   const [vehicle, setVehicle] = useState({
     name: '',
     make: '',
@@ -228,5 +228,3 @@ const RentalCabForm = () => {
     </form>
   );
 };
-
-export default RentalCabForm;
