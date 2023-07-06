@@ -1,11 +1,12 @@
 import {Routes, Route} from 'react-router-dom';
-import { Home } from './components/Home';
-import { About } from './components/About';
-// import { RentalCabForm } from './components/RentalCabForm/RentalCabForm';
-import {RentOutPage} from './components/PostPage';
+import { Home } from './Pages/Home/Home';
+import { About } from './Pages/About';
+import { RentOutPage } from './Pages/PostPage/PostPage';
 import { AuthProvider } from './contexts/AuthContext';
-import { Login } from './components/Login/Login';
-import { Signup } from './components/Signup/Signup';
+import { Login } from './Pages/Login/Login';
+import { Signup } from './Pages/Signup/Signup';
+
+// Link Bootstrap with project
 import 'bootstrap/dist/css/bootstrap.css';
 
 function App() {

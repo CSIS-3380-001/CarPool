@@ -1,8 +1,7 @@
-import React, { useContext, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
 
-import { Sidebar } from './Sidebar/Sidebar';
-import { RentalCabForm } from './RentalCabForm/RentalCabForm';
+import { Sidebar } from '../../components/Sidebar/Sidebar';
+import { RentalCabForm } from '../../components/RentalCabForm/RentalCabForm';
 
 export const RentOutPage = () => {
     
