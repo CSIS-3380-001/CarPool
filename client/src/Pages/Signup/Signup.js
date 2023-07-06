@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import API from '../../services/api';
 
 import './Signup.css';
 
@@ -7,9 +8,9 @@ export const Signup = () => {
   const navigate = useNavigate();
   
 
-  const [username, setUsername] = useState('');
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('gauravmehla');
+  const [email, setEmail] = useState('gaurav@mehla.in');
+  const [password, setPassword] = useState('ninja');
 
   const handleUsernameChange = (e) => {
     setUsername(e.target.value);
@@ -27,17 +28,22 @@ export const Signup = () => {
     e.preventDefault();
 
     // Perform signup logic here
-    console.log('Username:', username);
-    console.log('Email:', email);
-    console.log('Password:', password);
+    API.post("/users", {username, email, password})
+    .then(response => {
+        if(response.status === 201) {
+          // Reset form fields
+          setUsername('');
+          setEmail('');
+          setPassword('');
 
-    // Reset form fields
-    setUsername('');
-    setEmail('');
-    setPassword('');
+          // navigate to login
+          navigate("/login");
+        }
+    })
+    .catch(err => {
+      console.log(err);
+    })
 
-    // navigate to login
-    navigate("/login");
   };
 
   return (
