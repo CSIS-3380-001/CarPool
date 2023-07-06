@@ -112,7 +112,7 @@ export const RentalCabForm = () => {
                 onChange={handleVehicleChange}
               />
             </label>
-            <button onClick={handleNext}>Next</button>
+            <button onClick={handleNext} className="next-button">Next</button>
           </div>
         );
       case 2:
@@ -179,24 +179,15 @@ export const RentalCabForm = () => {
                 <option value="5">5 days</option>
               </select>
             </label>
-            <label>
-              Drop-off Date:
-              <DatePicker
-                selected={locations.dropOff}
-                onChange={handleDropOffChange}
-                dateFormat="MMMM d, yyyy"
-                placeholderText="Select a drop-off date"
-              />
-            </label>
-            <button onClick={handlePrev}>Previous</button>
-            <button onClick={handleNext}>Next</button>
+            <button onClick={handleNext} className="next-button" >Next</button>
+            <button onClick={handlePrev} className="previous-button"  >Previous</button>
           </div>
         );
       case 3:
         return (
           <div>
             <h2>Images</h2>
-            <label>
+            <label className="upload-image">
               Upload Images:
               <input
                 type="file"
@@ -205,23 +196,14 @@ export const RentalCabForm = () => {
                 onChange={handleImageUpload}
               />
             </label>
-            <div className="image-preview">
-              {images.map((image, index) => (
-                <div className="image-preview-item" key={index}>
-                  <img
-                    src={URL.createObjectURL(image)}
-                    alt={`Preview ${index}`}
-                  />
-                </div>
-              ))}
-            </div>
-            <button onClick={handlePrev}>Previous</button>
-            <button onClick={handleNext}>Next</button>
+            <button onClick={handleNext} className="next-button" >Next</button>
+            <button onClick={handlePrev} className="previous-button"  >Previous</button>
           </div>
         );
       case 4:
         return (
           <div>
+            <form onSubmit={handleSubmit}>
             <h2>Pricing</h2>
             <label>
               Daily Rate:
@@ -250,8 +232,54 @@ export const RentalCabForm = () => {
                 onChange={handleCostsChange}
               />
             </label>
-            <button onClick={handlePrev}>Previous</button>
-            <button onClick={handleSubmit}>Submit</button>
+            <button onClick={handleSubmit} className="next-button" >Submit</button>
+            <button onClick={handlePrev} className="previous-button" >Previous</button>
+            <div class="form-summary">
+  <h2>Summary</h2>
+  <table>
+    <tr>
+      <th>Vehicle:</th>
+      <td>{vehicle.name}</td>
+    </tr>
+    <tr>
+      <th>Make:</th>
+      <td>{vehicle.make}</td>
+    </tr>
+    <tr>
+      <th>Plate Number:</th>
+      <td>{vehicle.plateNumber}</td>
+    </tr>
+    <tr>
+      <th>Availability:</th>
+      <td>From - {availability.time} For - {availability.days} Days</td>
+    </tr>
+    <tr>
+      <th>Deposit:</th>
+      <td>{costs.deposit}$</td>
+    </tr>
+    <tr>
+      <th>Fare Per Day:</th>
+      <td>{costs.fare}$</td>
+    </tr>
+    <tr>
+      <th>Late Return Fee:</th>
+      <td>{costs.otherCosts}$</td>
+    </tr>
+    <tr>
+      <th>Images Uploaded:</th>
+      <td>{images.length}</td>
+    </tr>
+  </table>
+  <div class="image-preview">
+    {images.map((image, index) => (
+    <div class="image-preview-item" key={index}>
+      <img src={URL.createObjectURL(image)} alt={`Preview ${index}`} />
+    </div>
+    ))}
+  </div>
+</div>
+
+              </form>
           </div>
         );
       default:
@@ -262,7 +290,7 @@ export const RentalCabForm = () => {
   const renderProgressBar = () => {
     const progress = ((step - 1) / 3) * 100; // Calculate progress percentage
     return (
-      <div style={{ width: "100%", height: "20px", background: "#f0f0f0" }}>
+      <div style={{ width: "100%", height: "20px", background: "#f0f0f0" }} className="progress-bar">
         <div
           style={{
             width: `${progress}%`,
