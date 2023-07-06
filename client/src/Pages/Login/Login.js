@@ -1,6 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
+import API from '../../services/api';
 
 import './Login.css';
 
@@ -8,8 +9,8 @@ export const Login = () => {
   const { login } = useContext(AuthContext);
   const navigate = useNavigate();
 
-  const [email, setEmail] = useState('');
-  const [password, setPassword] = useState('');
+  const [email, setEmail] = useState('gaurav@mehla.in');
+  const [password, setPassword] = useState('OnePiece');
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -22,11 +23,16 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    console.log({email, password});
-    // Check credentials
-
-    login();
-    navigate("/");    
+    API.post("/auth/login", {email, password})
+    .then(response => {
+      if(response.status === 200) {
+        login();
+        navigate("/");
+      }
+    })
+    .catch(error => {
+      console.error('Login failed:', error);
+    });  
   };
 
   const goTo = (path) => {
@@ -77,10 +83,12 @@ export const Login = () => {
               </div>
             </form>
 
-            <div className="col">
-                <button className="btn btn-primary btn-block" onClick={() => {goTo("/sign-up")}}>
-                  Signup
-                </button>
+            <div className="row">
+              <div className="col">
+                  <button className="btn btn-primary btn-block" onClick={() => {goTo("/sign-up")}}>
+                    Signup
+                  </button>
+              </div>
             </div>
 
           </div>

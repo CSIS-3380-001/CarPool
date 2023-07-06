@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+
 import './Signup.css';
 
 export const Signup = () => {
@@ -41,7 +42,7 @@ export const Signup = () => {
 
   return (
 
-    <div className='container'>
+    <div className='container signup-form'>
       <div className='row'>
         <div className='col-md-6'>
         <div className="login-form">
@@ -80,9 +81,11 @@ export const Signup = () => {
               onChange={handlePasswordChange}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
-            Signup
-          </button>
+          <div className="form-group">
+            <button type="submit" className="btn btn-primary">
+              Signup
+            </button>
+          </div>
         </form>
       
       </div>
