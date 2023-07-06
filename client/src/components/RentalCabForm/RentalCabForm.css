@@ -1,16 +1,4 @@
-.form-container {
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  background: #f9f9f9;
-}
-
-.column {
-  margin-bottom: 20px;
-}
-
+/* Style for the form container */
 h2 {
   margin-top: 0;
 }
@@ -18,33 +6,80 @@ h2 {
 label {
   display: block;
   margin-bottom: 10px;
+  margin-right: 20px;
 }
 
-input[type="text"],
-select,
-button {
-  display: block;
+input[type="text"],select {
   width: 100%;
-  padding: 10px;
-  font-size: 16px;
+  padding: 5px;
   border: 1px solid #ccc;
-  border-radius: 4px;
-  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+
+div.form-summary {
+  margin-top: 100px;
+  border-top: 1px solid #ccc;
+  padding-top: 10px;
+}
+
+div.form-summary h2 {
   margin-bottom: 10px;
 }
 
-button {
-  margin-top: 20px;
-  background: #007bff;
-  color: #fff;
-  border: none;
-  cursor: pointer;
+div.form-summary p {
+  margin: 5px 0;
 }
 
-.button-container {
-  display: flex;
-  justify-content: flex-end;
+div.form-summary table {
+  width: 100%;
+  border-collapse: collapse;
 }
+
+div.form-summary th,
+div.form-summary td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+div.form-summary th {
+  font-weight: bold;
+}
+
+div.form-summary .image-preview {
+  display: flex;
+  flex-wrap: wrap;
+  margin-top: 10px;
+}
+
+div.form-summary .image-preview-item {
+  width: 100px;
+  height: 100px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  overflow: hidden;
+}
+
+div.form-summary .image-preview-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+
+button {
+  border-radius: 50%;
+  padding: 10px 20px; 
+  background-color: #007bff;
+  color: #fff; 
+  border: none;
+  cursor: pointer;
+  display: block; 
+}
+
+
 
 .image-preview {
   display: flex;
@@ -69,15 +104,44 @@ button {
 .progress-bar {
   width: 100%;
   height: 20px;
+  margin-top: 20px;
   background: #f0f0f0;
   border-radius: 4px;
   margin-bottom: 20px;
 }
 
-.progress {
-  width: 0;
-  height: 100%;
-  background: #007bff;
-  border-radius: 4px;
-  transition: width 0.3s ease;
+
+.next-button{
+    border-radius: 50%;
+    padding: 10px 20px; /* Adjust the padding as per your requirements */
+    background-color: #007bff; /* Set your desired background color */
+    color: #fff; /* Set your desired text color */
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 200px; /* Adjust the top position as per your requirements */
+    left: 270px; /* Adjust the left position as per your requirements */
+  
+}
+
+.next-button:hover {
+  background-color: #007bffb4;
+}
+
+.previous-button{
+  border-radius: 50%;
+  padding: 10px 20px; /* Adjust the padding as per your requirements */
+  background-color: #555555; /* Set your desired background color */
+  color: #fff; /* Set your desired text color */
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 200px; /* Adjust the top position as per your requirements */
+  left: 850px; /* Adjust the left position as per your requirements */
+
+}
+
+
+.previous-button:hover {
+  background-color: #555555a7;
 }
