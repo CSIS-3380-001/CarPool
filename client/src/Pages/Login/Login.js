@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../contexts/AuthContext';
 import API from '../../services/api';
+import Alert from 'react-bootstrap/Alert';
 
 import './Login.css';
 
@@ -11,6 +12,9 @@ export const Login = () => {
 
   const [email, setEmail] = useState('gaurav@mehla.in');
   const [password, setPassword] = useState('OnePiece');
+  const [showAlert, setShowAlert] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [showErrorAlert, setShowErrorAlert] = useState(false);
 
   const handleEmailChange = (e) => {
     setEmail(e.target.value);
@@ -23,15 +27,32 @@ export const Login = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
+    setIsSubmitting(true);
+
     API.post("/auth/login", {email, password})
     .then(response => {
       if(response.status === 200) {
-        login();
-        navigate("/");
+        setShowAlert(true);
+
+        setTimeout(() => {
+          setIsSubmitting(false);
+          setShowAlert(false);
+
+          login();
+          navigate("/");
+        }, 3000);
+        
       }
     })
     .catch(error => {
+      setIsSubmitting(false);
       console.error('Login failed:', error);
+      setShowErrorAlert(true);
+
+      setTimeout(() => {
+        setShowErrorAlert(false);
+      });
+      
     });  
   };
 
@@ -75,7 +96,7 @@ export const Login = () => {
               <div className="form-group">
                 <div className="row">
                   <div className="col">
-                    <button type="submit" className="btn btn-primary btn-block">
+                    <button type="submit" className="btn btn-primary btn-block login-button" disabled={isSubmitting}>
                       Login
                     </button>
                   </div>
@@ -85,10 +106,22 @@ export const Login = () => {
 
             <div className="row">
               <div className="col">
-                  <button className="btn btn-primary btn-block" onClick={() => {goTo("/sign-up")}}>
+                  <button className="btn btn-primary btn-block signup-button" onClick={() => {goTo("/sign-up")}} disabled={isSubmitting}>
                     Signup
                   </button>
               </div>
+            </div>
+
+            <div className="form-group">
+              {showAlert && (<Alert key={'success'} variant={'success'}>
+                Login successful
+              </Alert>)}
+
+              {showErrorAlert && (
+                <Alert variant="danger" onClose={() => setShowErrorAlert(false)} dismissible>
+                  Error while login
+                </Alert>
+              )}
             </div>
 
           </div>

@@ -21,3 +21,11 @@
 .sideImg img {
     height: 100vh;
 }
+
+.login-button {
+    width: 100%;
+}
+
+.signup-button {
+    width: 100%;
+}
