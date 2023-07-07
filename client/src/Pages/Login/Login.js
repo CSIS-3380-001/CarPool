@@ -45,13 +45,13 @@ export const Login = () => {
       }
     })
     .catch(error => {
-      setIsSubmitting(false);
       console.error('Login failed:', error);
       setShowErrorAlert(true);
 
       setTimeout(() => {
+        setIsSubmitting(false);
         setShowErrorAlert(false);
-      });
+      }, 3000);
       
     });  
   };
