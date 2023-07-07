@@ -12,13 +12,13 @@ export const RentalCabForm = () => {
   const [step, setStep] = useState(1);
 
   const [vehicle, setVehicle] = useState({
-    name: "Toyota Camry",
-    make: "Toyota",
+    name: "",
+    make: "",
     plateNumber: "",
   });
 
   const [availability, setAvailability] = useState({
-    from_location: "New Westminster",
+    from_location: "",
     time: "08:00",
     days: "2",
     pickup: new Date(),
@@ -40,13 +40,30 @@ export const RentalCabForm = () => {
     });
   };
 
+  const handlePickupDateChange = (date) => {
+    const tomorrow = new Date();
+    tomorrow.setDate(tomorrow.getDate());
+
+    if(date > tomorrow) {
+      setAvailability({
+      ...availability,
+      pickup: date,
+    });
+  }
+  else {
+    window.alert("Pickup date must be at least 24 hours from now.");
+  }
+
+  };
+
   const handleAvailabilityChange = (e) => {
+
     setAvailability({
       ...availability,
       [e.target.name]: e.target.value,
     });
-  };
 
+  };
 
   const handleCostsChange = (e) => {
     setCosts({
@@ -56,8 +73,24 @@ export const RentalCabForm = () => {
   };
 
   const handleImageUpload = (event) => {
+
+      const files = event.target.files;
+      const allowedTypes = ["image/png", "image/jpeg"];
+    
+      for (let i = 0; i < files.length; i++) {
+        const file = files[i];
+        const fileType = file.type;
+    
+        if (!allowedTypes.includes(fileType)) {
+          // File type is not allowed, handle the error
+          console.log("Invalid file type: " + fileType);
+          window.alert("Invalid file type: " + fileType);
+          // Optionally, you can display an error message to the user
+          return;
+        }
     const selectedFiles = Array.from(event.target.files);
     setImages(selectedFiles);
+      }
   };
 
   const handleNext = () => {
@@ -81,6 +114,7 @@ export const RentalCabForm = () => {
                 name="name"
                 value={vehicle.name}
                 onChange={handleVehicleChange}
+                required
               />
             </label>
             <label>
@@ -90,6 +124,7 @@ export const RentalCabForm = () => {
                 name="make"
                 value={vehicle.make}
                 onChange={handleVehicleChange}
+                required
               />
             </label>
             <label>
@@ -99,6 +134,7 @@ export const RentalCabForm = () => {
                 name="plateNumber"
                 value={vehicle.plateNumber}
                 onChange={handleVehicleChange}
+                required
               />
             </label>
 
@@ -116,13 +152,22 @@ export const RentalCabForm = () => {
           <div>
             <h2>Availability</h2>
             <label>
-              Pickup On:
-              <DatePicker
-                selected={availability.pickup}
+              Location:
+              <input
+                type="text"
+                name="from_location"
+                value={availability.from_location}
                 onChange={handleAvailabilityChange}
+                required
+              />
+            </label>
+            <label>
+              Pickup On:<br/>
+              <DatePicker
+                onChange={handlePickupDateChange}
                 dateFormat="MMMM d, yyyy"
                 placeholderText="Select a pickup date"
-                value={availability.pickup}
+                required
               />
             </label>
             <label>
@@ -132,6 +177,7 @@ export const RentalCabForm = () => {
                 name="time"
                 value={availability.time}
                 onChange={handleAvailabilityChange}
+                required
               >
                 <option value="">Select a time</option>
                 <option value="00:00">12:00 AM</option>
@@ -167,6 +213,7 @@ export const RentalCabForm = () => {
                 name="days"
                 value={availability.days}
                 onChange={handleAvailabilityChange}
+                required
               >
                 <option value="">Select a number of days</option>
                 <option value="1">1 day</option>
@@ -224,7 +271,7 @@ export const RentalCabForm = () => {
       case 4:
         return (
           <div>
-            <form onSubmit={handleSubmit}>
+            <form >
               <h2>Pricing</h2>
               <label>
                 Daily Rate:
@@ -233,6 +280,7 @@ export const RentalCabForm = () => {
                   name="fare"
                   value={costs.fare}
                   onChange={handleCostsChange}
+                  required
                 />
               </label>
               <label>
@@ -242,6 +290,7 @@ export const RentalCabForm = () => {
                   name="deposit"
                   value={costs.deposit}
                   onChange={handleCostsChange}
+                  required
                 />
               </label>
               <label>
@@ -251,11 +300,12 @@ export const RentalCabForm = () => {
                   name="otherCosts"
                   value={costs.otherCosts}
                   onChange={handleCostsChange}
+                  required
                 />
               </label>
               <Button
                 variant="success"
-                onClick={handleSubmit}
+                onClick={handleNext}
                 className="next-button"
               >
                 Submit
@@ -267,6 +317,14 @@ export const RentalCabForm = () => {
               >
                 Previous
               </Button>{" "}
+
+            </form>
+          </div>
+        );
+      case 5: 
+        return (
+          <div>
+            <h2 className="verify-details">Please verify the details</h2>
               <div className="form-summary">
                 <h2>Summary</h2>
                 <Table striped bordered hover>
@@ -285,7 +343,7 @@ export const RentalCabForm = () => {
                   <tr>
                     <th>Availability:</th>
                     <td>
-                      From - {availability.pickup.toDateString()}{", "}{availability.time} <br></br> Available For - {availability.days} Days
+                      From - {availability.from_location}<br></br>{availability.pickup.toDateString()}{", "}{availability.time} <br></br> Available For - {availability.days} Days
                     </td>
                   </tr>
                   <tr>
@@ -316,7 +374,20 @@ export const RentalCabForm = () => {
                   ))}
                 </div>
               </div>
-            </form>
+              <Button
+                variant="success"
+                onClick={handleSubmit}
+                className="next-button"
+              >
+                Submit
+              </Button>{" "}
+              <Button
+                variant="secondary"
+                onClick={handlePrev}
+                className="previous-button"
+              >
+                Previous
+              </Button>{" "}
           </div>
         );
       default:
@@ -325,26 +396,14 @@ export const RentalCabForm = () => {
   };
 
   const renderProgressBar = () => {
-    const progress = ((step - 1) / 3) * 100; // Calculate progress percentage
+    const progress = ((step - 1) / 3) * 100; // Calculate progress
     return (
-      // <div
-      //   style={{ width: "100%", height: "20px", background: "#f0f0f0" }}
-      //   className="progress-bar"
-      // >
-      //   <div
-      //     style={{
-      //       width: `${progress}%`,
-      //       height: "100%",
-      //       background: "#007bff",
-      //     }}
-      //   ></div>
-      // </div>
       <ProgressBar animated now={progress} style={{ marginTop: "20px" }}/>
     );
   };
 
   const handleSubmit = () => {
-    // Handle form submission
+    
   };
 
   return (

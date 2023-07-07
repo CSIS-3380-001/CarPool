@@ -15,7 +15,7 @@ input[type="text"],select {
 
 
 div.form-summary {
-  margin-top: 100px;
+  margin-top: 200px;
   border-top: 1px solid #ccc;
   padding-top: 10px;
 }
@@ -50,6 +50,11 @@ div.form-summary .image-preview {
   margin-top: 10px;
 }
 
+.verify-details{
+  margin-top: 30px;
+  margin-left: 50px;
+}
+
 div.form-summary .image-preview-item {
   width: 100px;
   height: 100px;
@@ -63,8 +68,6 @@ div.form-summary .image-preview-item img {
   height: 100%;
   object-fit: cover;
 }
-
-
 
 button {
   border-radius: 50%;

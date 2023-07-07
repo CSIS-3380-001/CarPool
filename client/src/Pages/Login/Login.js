@@ -22,17 +22,18 @@ export const Login = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
-    API.post("/auth/login", {email, password})
-    .then(response => {
-      if(response.status === 200) {
-        login();
-        navigate("/");
-      }
-    })
-    .catch(error => {
-      console.error('Login failed:', error);
-    });  
+    login();
+    navigate("/");
+    // API.post("/auth/login", {email, password})
+    // .then(response => {
+    //   if(response.status === 200) {
+    //     login();
+    //     navigate("/");
+    //   }
+    // })
+    // .catch(error => {
+    //   console.error('Login failed:', error);
+    // });  
   };
 
   const goTo = (path) => {
