@@ -1,10 +1,16 @@
 .Search {
     display: flex;
     flex-direction: column;
+ 
+      background-color: #e8e6eb;
+      
+    
     
     
   }
 
+
+  
 
   .search-bar {
     display: flex;
