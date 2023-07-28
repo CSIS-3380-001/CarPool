@@ -1,16 +1,10 @@
 .Search {
+    height: 100vh;
+    overflow: scroll;
     display: flex;
     flex-direction: column;
- 
-      background-color: #e8e6eb;
-      
-    
-    
-    
+    background-color: #e8e6eb;
   }
-
-
-  
 
   .search-bar {
     display: flex;
@@ -80,7 +74,7 @@
   .carousel-inner img {
     width: 20vw; /* Adjust the value as needed */
     height: auto;
-    margin-left: 20vw;
+    /* margin-left: 20vw; */
   }
   
   .carousel-control-prev,
@@ -111,7 +105,7 @@
   }
   
   .card {
-    width: calc(33.33% - 20px); /* Adjust the width of each card to fit three cards in a row */
+    /* width: calc(33.33% - 20px);  */
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
@@ -157,3 +151,7 @@
     text-align: right;
   }
   
+.cars-result {
+    height: 75vh;
+    overflow: scroll !important;
+}

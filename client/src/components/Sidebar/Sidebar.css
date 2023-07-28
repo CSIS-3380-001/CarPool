@@ -1,69 +1,51 @@
-html,
-body {
-  height: 100%;
-  margin: 0;
-}
-
+/* Sidebar.css */
 .sidebar {
-  background-color: #333;
-  color: #fff;
-  width: 250px;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-  position: relative;
-}
-
-.sidebar h1 {
-  padding: 20px;
-  margin: 0;
-  font-size: 20px;
-  text-align: center;
-}
-
-.sidebar ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-.sidebar li {
-  padding: 10px;
-}
-
-.sidebar a {
-  display: block;
-  padding: 10px;
-  color: #fff;
-  text-decoration: none;
-  text-align: center;
-  transition: background-color 0.3s;
-}
-
-.sidebar a:hover {
-  background-color: #555;
-}
-
-.sidebar .button-wrapper {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
-.sidebar button {
-  display: block;
-  width: 80%;
-  margin-bottom: 10px;
-  margin-left: 10px;
-  padding: 10px;
-  background-color: red;
-  color: #fff;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.sidebar button:hover {
-  background-color: #cc0000;
-}
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .sidebar-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .menu-icon {
+    font-size: 24px;
+    margin-right: 10px;
+    color: #fff;
+  }
+  
+  .sidebar-title {
+    font-size: 1.5rem;
+    color: #fff;
+    margin: 0;
+  }
+  
+  .nav-item {
+    margin-bottom: 10px;
+  }
+  
+  .nav-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: #fff;
+    transition: color 0.3s; /* Adding transition effect for smooth color change */
+  }
+  
+  .nav-link:hover {
+    color: #007bff !important;
+  }
+  
+  .menu-text {
+    margin-left: 10px;
+  }
+  
+  .sidebar-footer {
+    text-align: center;
+    margin-top: auto;
+  }
+  

@@ -4,7 +4,8 @@
 }
 
 .sideImg img {
-    height: 100vh;
+    margin-top: 20vh;
+    height: 50vh;
 }
 
 .signup-form input[type="text"] {

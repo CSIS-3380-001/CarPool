@@ -29,6 +29,8 @@ export const Login = () => {
 
     setIsSubmitting(true);
 
+    console.log("submitting");
+
     API.post("/auth/login", {email, password})
     .then(response => {
       if(response.status === 200) {
@@ -127,7 +129,7 @@ export const Login = () => {
           </div>
         </div>
         <div className='col-md-6 sideImg'>
-          <img src="https://i.imgur.com/Dc9mJwI.jpg" aria-hidden alt="Image"/>
+          <img src="https://i.imgur.com/NcJnX31.jpg" aria-hidden alt="Image"/>
         </div>
       </div>
     </div>

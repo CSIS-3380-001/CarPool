@@ -1,8 +1,8 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './Start.css';
-import RentOutCar from './RentOutCar';
-import Host from './Host';
+// import RentOutCar from './RentOutCar';
+// import Host from './Host';
 
 const Start = () => (
   <div className="main-content">
