@@ -23,4 +23,12 @@ export const post = (url, data = {}, config = {}) => {
     });
 };
 
+export const put = (url, data = {}, config = {}) => {
+    return apiService.put(url, data, config)
+      .then(response => response.data)
+      .catch(error => {
+        throw new Error(`API PUT request failed: ${error}`);
+      });
+  };
+
 export default apiService;

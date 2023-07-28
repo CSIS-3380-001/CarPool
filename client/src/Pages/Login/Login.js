@@ -34,6 +34,12 @@ export const Login = () => {
     API.post("/auth/login", {email, password})
     .then(response => {
       if(response.status === 200) {
+        // Assuming the user data is at the first index of the users array
+        const user = response.data.users[0];
+        
+         // Store user id in local storage
+        localStorage.setItem('userId', user._id);
+
         setShowAlert(true);
 
         setTimeout(() => {
