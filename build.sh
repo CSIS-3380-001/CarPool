@@ -2,7 +2,7 @@
 
 # Run the build command for your React app (assuming you are using create-react-app)
 cd client && npm i && npm run build
-cd ../server && npm i && npm start
+cd ../server && npm i
 
 # If you have other build steps or tasks, you can add them here.
 # For example, if you need to install dependencies before building:
