@@ -17,12 +17,17 @@ dotenv.config();
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, '../client/build')));
 app.use(cors());
 
 // Routes
 app.use(router);
 app.use('/cars', carRouter);
+
+// After Routes
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
+});
 
 /**
  * Create HTTP server.
