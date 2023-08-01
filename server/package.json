@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "start": "pm2 start app.js --name='final-proj'"
+    "start": "pm2-runtime start app.js --name='final-proj'"
   },
   "dependencies": {
     "cloudinary": "^1.39.0",
