@@ -4,6 +4,8 @@ import { Modal, Button, Form } from "react-bootstrap";
 import API from '../../services/api';
 import './Profile.css';
 import { Sidebar } from '../../components/Sidebar/Sidebar';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faStar } from '@fortawesome/free-solid-svg-icons'
 
 
 export const Profile = () => {
@@ -93,11 +95,15 @@ export const Profile = () => {
               />
             </div>
             <div className="profile-details">
-              <h3 className="full-name">{name}</h3>
-              <div className="rating">5.0</div>
-              <button className="btn btn-primary" onClick={handleShow}>
-                Edit Profile
-              </button>
+                <h3 className="full-name">{name}</h3>
+                <div className="rating">
+                    <FontAwesomeIcon icon={faStar} />
+                    {' '}
+                    5.0
+                </div>
+                <button className="btn btn-primary" onClick={handleShow}>
+                    Edit Profile
+                </button>
             </div>
           </div>
           <hr className="divider" />
