@@ -78,3 +78,7 @@
     object-fit: cover;
   }
   
+
+  .card {
+    height: fit-content !important;
+  }

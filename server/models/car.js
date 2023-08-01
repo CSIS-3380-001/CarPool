@@ -29,6 +29,11 @@ const carSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  userId: {
+    type: String,
+    required: true,
+    ref: 'User' 
+  }
 });
 
 const Car = mongoose.model("Car", carSchema);

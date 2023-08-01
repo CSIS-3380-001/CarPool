@@ -1,4 +1,5 @@
 const express = require('express');
+const mongoose = require('mongoose');
 const router = express.Router();
 const Car = require('../../models/car');
 const multer = require('multer');
@@ -50,6 +51,22 @@ router.get('/allCars', (req, res) => {
     });
 });
 
+
+router.get('/userCars/:userId', async (req, res) => {
+    const { userId } = req.params;
+
+    console.log("we are here",  {userId});
+
+    try {
+        const cars = await Car.find({ userId });
+        // console.log(cars);
+        res.status(200).json(cars);
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ message: 'Server error' });
+    }
+
+});
 
 
 router.post('/saveCars', upload.single('carImage'), async (req, res) => {

@@ -39,6 +39,7 @@ export const Login = () => {
         
          // Store user id in local storage
         localStorage.setItem('userId', user._id);
+        localStorage.setItem('user', JSON.stringify(user));
 
         setShowAlert(true);
 
