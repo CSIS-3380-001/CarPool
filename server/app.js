@@ -8,6 +8,8 @@ const connectDB = require('./config/db');
 const cors = require('cors');
 
 let app = express();
+let router = require('./router');
+const carRouter = require('./routes/cars/carindex');
 
 // Import .env vars
 dotenv.config();
@@ -18,7 +20,9 @@ app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 
-
+// Routes
+app.use(router);
+app.use('/cars', carRouter);
 
 /**
  * Create HTTP server.
@@ -41,8 +45,7 @@ const start = async () => {
   });
 }
 
-const carRouter = require('./routes/cars/carindex');
-app.use('/cars', carRouter);
+
 
 // Spin up the server
 start();
@@ -87,7 +90,7 @@ function onError(error) {
 // const cors = require('cors');
 
 // let app = express();
-// let router = require('./routes');
+
 
 // // Import .env vars
 // dotenv.config();
@@ -98,8 +101,7 @@ function onError(error) {
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(cors());
 
-// // Routes
-// app.use(router);
+
 
 // /**
 //  * Create HTTP server.

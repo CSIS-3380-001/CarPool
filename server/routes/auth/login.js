@@ -17,7 +17,7 @@ router.post('/', (req, res) => {
           users: result
         });
       } else {
-        throw err();
+        throw new Error();
       }
     })
     .catch((err) => {

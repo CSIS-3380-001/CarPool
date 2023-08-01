@@ -180,21 +180,9 @@ export const RentOutCar = () => {
     //         </div>
     //         <br>
 
-    //         </br>
-    //         <br></br>
-    //         <div className="grid-container">
-    //             {cars.map((car) => (
-    //             <Info
-    //                 key={car._id}
-    //                 url={car.carImageLink}
-    //                 name={car.carName}
-    //                 desc={car.desc}
-    //                 avail={car.available}
-    //                 drop={car.DropDate}
-    //                 city={car.city}
-    //             />
-    //             ))}
-    //         </div>
+            // </br>
+            // <br></br>
+            
 
     //         </div>
     //     </div>
@@ -263,20 +251,15 @@ export const RentOutCar = () => {
 
         <div className="row row-cols-1 row-cols-md-3 g-4 cars-result">
             {cars.map((car) => (
-            <div className="col" key={car._id}>
-                <div className="card h-100">
-                <img src={car.carImageLink} className="card-img-top" alt={car.carName} />
-                <div className="card-body">
-                    <h5 className="card-title">{car.carName}</h5>
-                    <p className="card-text">{car.desc}</p>
-                </div>
-                <div className="card-footer">
-                    <small className="text-muted">
-                    Available: {car.available} | Drop: {car.DropDate} | City: {car.city}
-                    </small>
-                </div>
-                </div>
-            </div>
+            <Info
+                key={car._id}
+                url={car.carImageLink}
+                name={car.carName}
+                desc={car.desc}
+                avail={car.available}
+                drop={car.DropDate}
+                city={car.city}
+            />
             ))}
         </div>
         </div>
