@@ -3,6 +3,7 @@ import { Carousel } from 'react-bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import 'bootstrap/dist/js/bootstrap.bundle.min.js';
 import { Sidebar } from '../components/Sidebar/Sidebar';
+import API from '../services/api';
 
 import './rent.css';
 
@@ -40,7 +41,7 @@ export const RentOutCar = () => {
   useEffect(() => {
 
     const fetchCars = () => {
-        let apiUrl = 'http://localhost:8081/cars/allCars';
+        let apiUrl = '/cars/allCars';
         const params = [];
     
         if (selectedCity) {
@@ -55,11 +56,11 @@ export const RentOutCar = () => {
           apiUrl += `?${params.join('&')}`;
         }
     
-        fetch(apiUrl)
-          .then((response) => response.json())
-          .then((data) => {
-            console.log(data);
-            setCars(data);
+        API.get(apiUrl)
+        //   .then((response) => response.json())
+          .then((response) => {
+            console.log(response.data);
+            setCars(response.data);
           })
           .catch((error) => {
             console.error('Error fetching data:', error);
