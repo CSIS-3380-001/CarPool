@@ -14,10 +14,9 @@ router.post('/', function(req, res, next) {
         desc: req.body.vehicle.description,
         available: req.body.availability.pickup,
         DropDate: req.body.availability.dropoff,
-        city: "Surrey",
+        city: req.body.availability.city,
         carImageLink:"https://res.cloudinary.com/deumoji1t/image/upload/v1690236162/c%40b.comasasa.png",
         userId: req.body.id,
-
     });
 
     newCar.save()

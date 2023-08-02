@@ -40,7 +40,7 @@ export const RentalCabForm = () => {
     from_location: "New Westminster",
     time: "08:00",
     days: "2",
-    city: "Surrey",
+    city: "",
     pickup: new Date(),
     dropoff: new Date(),
   });
@@ -61,12 +61,19 @@ export const RentalCabForm = () => {
   };
 
   const handleAvailabilityChange = (date, name) => {
+    console.log(date);
     setAvailability({
       ...availability,
       [name]: date,
     });
   };
 
+  const handleCityChange = (e) => {
+    setAvailability({
+      ...availability,
+      [e.target.name]: e.target.value,
+    });
+  }
   const handleCostsChange = (e) => {
     setCosts({
       ...costs,
@@ -168,18 +175,19 @@ export const RentalCabForm = () => {
             <label>
               City: 
               <Form.Select
-                aria-label="Default select example"
-                name="city"
-                value={availability.city}
-                onChange={handleAvailabilityChange}
-              >
-                <option value="">Select</option>
-                <option value="Surrey">Surrey</option>
-                <option value="New Westminster">New Westminster</option>
-                <option value="Burnaby">Burnaby</option>
-                <option value="Vancouver">Vancouver</option>
-                <option value="Richmond">Richmond</option>
-              </Form.Select>
+  aria-label="Default select example"
+  name="city"
+  value={availability.city}
+  onChange={handleCityChange}
+>
+  <option value="">Select</option>
+  <option value="Surrey">Surrey</option>
+  <option value="New Westminster">New Westminster</option>
+  <option value="Burnaby">Burnaby</option>
+  <option value="Vancouver">Vancouver</option>
+  <option value="Richmond">Richmond</option>
+</Form.Select>
+
             </label>
             <Button
               variant="success"
