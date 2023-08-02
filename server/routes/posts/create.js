@@ -28,7 +28,7 @@ router.post('/', function(req, res, next) {
         });
     })
     .catch((err) => {
-        res.status(500).json({ error: 'Failed to create car' });
+        res.status(500).json({ error: 'Failed to create car', err });
     });
     
 });
