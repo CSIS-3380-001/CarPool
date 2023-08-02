@@ -67,7 +67,7 @@ div.form-summary .image-preview-item img {
 
 
 button {
-  border-radius: 50%;
+  /* border-radius: 50%; */
   padding: 10px 20px; 
   background-color: #007bff;
   color: #fff; 
