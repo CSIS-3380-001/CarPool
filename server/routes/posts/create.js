@@ -1,5 +1,6 @@
 let express = require('express');
 let router = express.Router();
+const Car = require('../../models/car');
 
 
 router.post('/', function(req, res, next) {
@@ -15,11 +16,7 @@ router.post('/', function(req, res, next) {
         DropDate: req.body.availability.dropoff,
         city: "Surrey",
         carImageLink:"https://res.cloudinary.com/deumoji1t/image/upload/v1690236162/c%40b.comasasa.png",
-<<<<<<< Updated upstream
         userId: req.body.id,
-=======
-        
->>>>>>> Stashed changes
 
     });
 
