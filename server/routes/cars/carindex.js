@@ -6,12 +6,15 @@ const multer = require('multer');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
 
+
 // Configure Cloudinary
 cloudinary.config({
   cloud_name: 'deumoji1t',
   api_key: '835885467987919',
   api_secret: 'UdmBKn2EIutr9pNRJ7E5RQveiwM',
 });
+
+
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {

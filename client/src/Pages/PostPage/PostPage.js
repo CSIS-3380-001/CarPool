@@ -4,7 +4,7 @@ import { Sidebar } from '../../components/Sidebar/Sidebar';
 import { RentalCabForm } from '../../components/RentalCabForm/RentalCabForm';
 
 export const RentOutPage = () => {
-    
+
     return (
     <div className="container-fluid">
       <div className="row">
