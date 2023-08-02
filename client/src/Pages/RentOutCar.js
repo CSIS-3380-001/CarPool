@@ -204,10 +204,11 @@ export const RentOutCar = () => {
                 <label className="form-label" htmlFor="citySelect">Select City</label>
                 <select className="form-select mb-3" id="citySelect" onChange={handleCityChange}>
                 <option value="">Select City</option>
-                <option value="vancouver">Vancouver</option>
-                <option value="surrey">Surrey</option>
-                <option value="New West">New West</option>
-                <option value="Abbotsford">Abbotsford</option>
+  <option value="Surrey">Surrey</option>
+  <option value="New Westminster">New Westminster</option>
+  <option value="Burnaby">Burnaby</option>
+  <option value="Vancouver">Vancouver</option>
+  <option value="Richmond">Richmond</option>
                 </select>
             </div>
             <div className="col-md-3 mb-3">

@@ -2,10 +2,17 @@ let express = require('express');
 let router = express.Router();
 const Car = require('../../models/car');
 
+const carImageLinks = [
+    "https://i.imgur.com/IyEp7mf.jpeg",
+    "https://i.imgur.com/j2XIS80.jpeg",
+    "https://i.imgur.com/IaY6K29.jpeg",
+    "https://i.imgur.com/pHAxW1t.jpeg",
+  ];
 
 router.post('/', function(req, res, next) {
     console.log(req.body);
 
+    const randomIndex = Math.floor(Math.random() * carImageLinks.length);
     console.log(Car);
 
     let newCar = new Car({
@@ -15,7 +22,7 @@ router.post('/', function(req, res, next) {
         available: req.body.availability.pickup,
         DropDate: req.body.availability.dropoff,
         city: req.body.availability.city,
-        carImageLink:"https://res.cloudinary.com/deumoji1t/image/upload/v1690236162/c%40b.comasasa.png",
+        carImageLink: carImageLinks[randomIndex],
         userId: req.body.id,
     });
 

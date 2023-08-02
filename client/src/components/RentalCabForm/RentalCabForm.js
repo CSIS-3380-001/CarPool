@@ -40,7 +40,7 @@ export const RentalCabForm = () => {
     from_location: "New Westminster",
     time: "08:00",
     days: "2",
-    city: "",
+    city: "Surrey",
     pickup: new Date(),
     dropoff: new Date(),
   });
@@ -180,7 +180,7 @@ export const RentalCabForm = () => {
   value={availability.city}
   onChange={handleCityChange}
 >
-  <option value="">Select</option>
+  <option value="Surrey">Select</option>
   <option value="Surrey">Surrey</option>
   <option value="New Westminster">New Westminster</option>
   <option value="Burnaby">Burnaby</option>
