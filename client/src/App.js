@@ -28,6 +28,7 @@
 
 // export default App;
 
+import React from 'react';
 import { Routes, Route } from 'react-router-dom';
 // import { Home } from './Pages/Home/Home';
 import { About } from './Pages/About';
