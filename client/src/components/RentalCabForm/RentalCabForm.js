@@ -84,7 +84,7 @@ export const RentalCabForm = () => {
   const handleImageUpload = (event) => {
     const selectedFiles = Array.from(event.target.files);
 
-    setImages(selectedFiles[0]);
+    setImages(selectedFiles);
   };
 
   const handleNext = () => {
