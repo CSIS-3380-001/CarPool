@@ -14,6 +14,20 @@ const Info = (props) => {
   const formattedAvailableDate = new Date(props.avail).toLocaleDateString();
   const formattedDropDate = new Date(props.drop).toLocaleDateString();
 
+    
+  // State to manage the text and color of the button
+  const [buttonText, setButtonText] = useState("Rent Now");
+  const [isClicked, setIsClicked] = useState(false);
+
+  const handleButtonClick = () => {
+    setButtonText("Car owner will contact you");
+    setIsClicked(true);
+  }
+
+  // Conditionally set the button class based on whether it has been clicked
+  const buttonClass = isClicked ? "btn btn-success" : "btn btn-primary";
+
+
   return (
     <div className='card'>
       <img src={props.url} alt={props.name} className="card-image" />
@@ -24,7 +38,7 @@ const Info = (props) => {
         <p><strong>Available Date:</strong> {formattedAvailableDate}</p>
         <p><strong>Drop Date and Time:</strong> {formattedDropDate}</p>
       </div>
-      <button>Rent Now</button>
+      <button className={buttonClass} onClick={handleButtonClick}>{buttonText}</button>
     </div>
   );
 };
