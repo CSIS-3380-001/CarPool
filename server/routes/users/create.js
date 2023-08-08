@@ -9,6 +9,7 @@ router.post('/', function(req, res, next) {
     console.log(User);
 
     let newUser = new User({
+        name: req.body.username,
         username: req.body.username,
         email: req.body.email,
         password: req.body.password
@@ -23,6 +24,7 @@ router.post('/', function(req, res, next) {
         });
     })
     .catch((err) => {
+        console.log(err);
         res.status(500).json({ error: 'Failed to create user' });
     });
     
