@@ -3,6 +3,8 @@
 ### CSIS-3380 final-project
 (Live)[https://final-project-t6mw.onrender.com/]
 
+Click (here)[https://docs.google.com/presentation/d/1tZtpZ9vnNO4YLQmzJGnWDYVk61oscH4o/edit?usp=sharing&ouid=107629848542142477747&rtpof=true&sd=true] for more details
+
 ## How to use
 1. Clone the repo
     `git clone https://github.com/CSIS-3380-001/final-project`
@@ -15,7 +17,7 @@
     ```
     PORT=8081
 
-    DB_URI="mongodb+srv://root:VRPd3ICLK6juCQCa@cluster0.dg4ocjz.mongodb.net/?retryWrites=true&w=majority"
+    DB_URI="mongodb+srv://root:<passwd>@cluster0.dg4ocjz.mongodb.net/?retryWrites=true&w=majority"
     ```
 4. Start server using `npm start`
 
