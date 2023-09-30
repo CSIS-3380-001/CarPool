@@ -1,9 +1,9 @@
 # CarPool
 
 ### CSIS-3380 final-project
-(Live)[https://final-project-t6mw.onrender.com/]
+[Live](https://final-project-t6mw.onrender.com/)
 
-Click (here)[https://docs.google.com/presentation/d/1tZtpZ9vnNO4YLQmzJGnWDYVk61oscH4o/edit?usp=sharing&ouid=107629848542142477747&rtpof=true&sd=true] for more details
+Click [here](https://docs.google.com/presentation/d/1tZtpZ9vnNO4YLQmzJGnWDYVk61oscH4o/edit?usp=sharing&ouid=107629848542142477747&rtpof=true&sd=true) for more details
 
 ## How to use
 1. Clone the repo
