@@ -3,7 +3,7 @@
 ### CSIS-3380 final-project
 [Live](https://final-project-t6mw.onrender.com/)
 
-Click [here](https://docs.google.com/presentation/d/1tZtpZ9vnNO4YLQmzJGnWDYVk61oscH4o/edit?usp=sharing&ouid=107629848542142477747&rtpof=true&sd=true) for more details
+Click [here](https://docs.google.com/presentation/d/e/2PACX-1vQKBGODF5uPRPPHolszmJtKhXX0sp-ERrtLO8R5GaTSFKnCojqfUETnAql6S30RJg/pub?start=false&loop=false&delayms=3000) for more details
 
 ## How to use
 1. Clone the repo
